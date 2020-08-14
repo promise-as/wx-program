@@ -1,0 +1,25 @@
+<!--pages/list/list.wxml-->
+<import src="/pages/template/list-template.wxml"></import>
+
+<view>
+  <swiper indicator-dots indicator-color='green' indicator-active-color='lime' catchtap='carouselToDetail'>
+    <swiper-item>
+      <image  data-index="1" src='https://img.thea.cn/jingjia/public/202007/hbj/szu-wap/images/c_1.png'></image>
+    </swiper-item>
+    <swiper-item>
+      <image  data-index="0" src='https://img.thea.cn/jingjia/public/202007/hbj/szu-wap/images/c_2.png'></image>
+    </swiper-item>
+    <swiper-item>
+      <image  data-index="2" src='https://img.thea.cn/jingjia/public/202007/hbj/szu-wap/images/c_3.png'></image>
+    </swiper-item>
+    <swiper-item>
+      <image  data-index="3" src='https://img.thea.cn/jingjia/public/202007/hbj/szu-wap/images/c_4.png'></image>
+    </swiper-item>
+  </swiper>
+</view>
+
+<block wx:for="{{listArr}}" wx:key="index">
+  <view data-index="{{index}}">
+    <template is="listTmp" data="{{...item}}"></template>
+  </view>
+</block>

@@ -1,0 +1,35 @@
+/**index.wxss**/
+page{
+  background: #8ED145;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #000;
+  margin-bottom: 100rpx;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.goStudy {
+  width: 220rpx;
+  height: 80rpx;
+  font-size: 28rpx;
+  border: 1px solid #999999;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 80rpx;
+}
