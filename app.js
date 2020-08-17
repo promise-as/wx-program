@@ -39,6 +39,7 @@ App({
 
   data: {
     isPlay: false, // 是否播放
-    pageIndex: 1 // 当前页面是否在播放
+    pageIndex: 1, // 当前页面是否在播放
+    moviesArr: [] // 电影数据
   }
 })

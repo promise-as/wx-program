@@ -26,7 +26,23 @@ Page({
     this.setData({
       detailObj: datas.list_data[index],
       index: index
-    })
+    });
+
+    // 根据本地缓存的数据判断用户是否收藏当前的文章
+    let detailStroage = wx.getStorageSync('isCollected');
+    // console.log(detailStroage, 111);
+    
+    if(!detailStroage){
+      // 在缓存中初始化空对象
+      wx.setStorageSync('isCollected', {})
+    }
+
+    // 判断用户是否收藏
+    if(detailStroage[index]){ // 收藏过
+      this.setData({
+        isCollected: true
+      })
+    }
   },
 
   handleMusicPlay(){
@@ -59,6 +75,26 @@ Page({
     wx.showToast({
       title: title,
       icon:'success'
+    })
+
+    // 缓存数据到本地
+    // {1: true, 2: false} key为下标(index)，value为isCollected
+    let {index} = this.data;
+
+    wx.getStorage({
+      key: 'isCollected',
+      success: (datas) => {
+        // console.log(datas, '点击获取的数据')
+        let obj = datas.data; // {0: true, 1: true}
+        obj[index] = isCollected;
+        wx.setStorage({
+          data: obj,
+          key: 'isCollected',
+          success: () => {
+            console.log('缓存成功');
+          }
+        })
+      }
     })
   },
 
