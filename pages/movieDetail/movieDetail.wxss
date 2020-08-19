@@ -1,4 +1,4 @@
-/* pages/movieDetail/movieDetail.wxss *//* pages/movieDetail/movieDetail.wxss */
+/* pages/movieDetail/movieDetail.wxss */
 .movieDetailContainer{
   display: flex;
   flex-direction: column;
@@ -14,6 +14,7 @@
 .movie_name{
   font-size: 40rpx;
   font-weight: bold;
+  margin-bottom: 20rpx;
 }
 
 .movie_detail{
@@ -23,10 +24,5 @@
 }
 
 button{
-  width: 70%;
-  height: 80rpx;
-  background: green;
-  color: #fff;
-  line-height: 80rpx;
   margin-top: 50rpx;
 }

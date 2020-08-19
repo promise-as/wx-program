@@ -1,5 +1,5 @@
 // pages/list/list.js
-let datas = require('../../datas/list-data')
+let datas = require('../../datas/list-data.js')
 // console.log(datas, 111)
 
 Page({
@@ -17,6 +17,15 @@ Page({
   onLoad: function (options) {
     this.setData({
       listArr: datas.list_data
+    })
+  },
+
+  // 点击跳转到detail详情页
+  toDetail(event){
+    // 获取点击跳转对应的下标
+    let index = event.currentTarget.dataset.index;
+    wx.navigateTo({
+      url: '/pages/detail/detail?index=' + index,
     })
   },
 

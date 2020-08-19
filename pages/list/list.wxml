@@ -18,8 +18,8 @@
   </swiper>
 </view>
 
-<block wx:for="{{listArr}}" wx:key="index">
-  <view data-index="{{index}}">
+<block wx:for="{{listArr}}" wx:key="{{index}}">
+  <view catchtap='toDetail' data-index="{{index}}">
     <template is="listTmp" data="{{...item}}"></template>
   </view>
 </block>
